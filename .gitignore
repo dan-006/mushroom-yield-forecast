@@ -1,0 +1,10 @@
+venv/
+.env
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Large raw logs
+data/raw/*.csv
+!data/raw/.gitkeep

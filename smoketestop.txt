@@ -1,0 +1,7 @@
+Polyhouse sensor snapshot:
+  date: 2026-06-02
+  temperature_c: 22.4
+  humidity_pct: 88.5
+  co2_ppm: 950
+  yield_kg: 12.3
+Environment OK.
