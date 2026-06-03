@@ -112,3 +112,17 @@ Polyhouse sensor snapshot:
 
 Environment OK.
 
+
+
+Folder Map
+
+
+
+data/raw      -> Raw sensor CSV files
+
+notebooks     -> Jupyter notebooks
+
+src           -> Python scripts
+
+models        -> Trained models
+
