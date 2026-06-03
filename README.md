@@ -6,17 +6,9 @@ Problem Statement
 
 
 
-Predict daily mushroom yield (kg) in a climate-controlled polyhouse using:
+Predict daily mushroom yield (kg) in a climate-controlled polyhouse
 
-
-
-\- Temperature (°C)
-
-\- Relative Humidity (%)
-
-\- CO2 (ppm)
-
-
+using temperature, humidity, and CO₂ sensor readings.
 
 The goal is to build a machine learning pipeline that estimates mushroom yield from sensor readings.
 
