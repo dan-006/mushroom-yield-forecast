@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import joblib
 import json
+import matplotlib.pyplot as plt
 from pathlib import Path
 
 from sklearn.linear_model import LinearRegression
@@ -45,29 +46,27 @@ model.fit(X_train, y_train)
 # Predictions
 # ---------------------------------
 
-pred_train = model.predict(X_train)
 pred_test = model.predict(X_test)
+pred_train = model.predict(X_train)
 
-# ---------------------------------
-# Metrics
-# ---------------------------------
+residuals = y_test - pred_test
 
-mae = mean_absolute_error(
-    y_test,
-    pred_test
+train_residuals = y_train - pred_train
+test_residuals = y_test - pred_test
+
+print(
+    "\nMean Absolute Train Residual:",
+    abs(train_residuals).mean()
 )
 
-rmse = np.sqrt(
-    mean_squared_error(
-        y_test,
-        pred_test
-    )
+print(
+    "Mean Absolute Test Residual:",
+    abs(test_residuals).mean()
 )
 
-r2 = r2_score(
-    y_test,
-    pred_test
-)
+mae = mean_absolute_error(y_test, pred_test)
+rmse = np.sqrt(mean_squared_error(y_test, pred_test))
+r2 = r2_score(y_test, pred_test)
 
 # ---------------------------------
 # Print metrics
@@ -129,6 +128,62 @@ with open(
         f,
         indent=4
     )
+
+plt.figure(figsize=(6, 4))
+
+plt.scatter(
+    pred_test,
+    residuals,
+    alpha=0.5
+)
+
+plt.axhline(
+    y=0,
+    color="red",
+    linestyle="--"
+)
+
+plt.xlabel("Predicted Yield (kg)")
+plt.ylabel("Residual (kg)")
+plt.title("Residuals vs Predicted Yield")
+
+plt.tight_layout()
+
+plt.savefig(
+    "reports/figures/residuals_vs_predicted_linear.png",
+    dpi=150
+)
+
+plt.close()
+
+humidity_feature = X_test.iloc[:, 1]
+
+plt.figure(figsize=(6, 4))
+
+plt.scatter(
+    humidity_feature,
+    residuals,
+    alpha=0.5
+)
+
+plt.axhline(
+    y=0,
+    color="red",
+    linestyle="--"
+)
+
+plt.xlabel("Scaled Humidity")
+plt.ylabel("Residual (kg)")
+plt.title("Residuals vs Humidity")
+
+plt.tight_layout()
+
+plt.savefig(
+    "reports/figures/residuals_vs_humidity_linear.png",
+    dpi=150
+)
+
+plt.close()
 
 print("\nSaved:")
 print("models/linear_regression.joblib")
