@@ -7,7 +7,7 @@ from pathlib import Path
 df = pd.read_parquet("data/processed/02_cleaned.parquet")
 
 # Sort by timestamp
-df = df.sort_values("timestamp")
+df = df.sort_values("timestamp").reset_index(drop=True)
 
 # --------------------------------------------------
 # Engineered Feature
@@ -58,6 +58,12 @@ scaled_df = pd.DataFrame(
 )
 
 scaled_df["yield_kg"] = y.values
+
+# ----------------------------
+# VALIDATION CHECKS
+# ----------------------------
+assert scaled_df[scaled_df.columns[:-1]].min().min() >= 0
+assert scaled_df[scaled_df.columns[:-1]].max().max() <= 1
 
 # Save processed features
 Path("data/processed").mkdir(

@@ -1,128 +1,130 @@
-\# EDA Notes
+EDA Notes
 
 
 
-\## Overview
+Overview
 
 
 
-Exploratory Data Analysis was performed on 365 daily mushroom polyhouse observations containing temperature, humidity, CO₂ concentration, and yield measurements. Correlation analysis and scatter plots were used to identify relationships between environmental conditions and mushroom yield.
+Exploratory Data Analysis (EDA) was performed on 994 cleaned polyhouse observations collected between January 2023 and September 2025. Correlation analysis and scatter plots were used to examine relationships between environmental variables and mushroom yield.
 
 
 
-\## Correlation Analysis
+Correlation Analysis
 
 
 
-\### Strongest Positive Correlation
+Strongest Positive Correlation
 
 
 
-\* Temperature shows the strongest positive correlation with yield among the available features.
+\* Temperature and CO₂ concentration show the strongest positive correlation among the environmental variables.
 
-\* The heatmap indicates that higher temperatures within the observed operating range are generally associated with higher yields.
-
-
-
-\### Moderate Positive Correlation
+\* This suggests periods of higher temperature are often associated with higher CO₂ levels within the polyhouse environment.
 
 
 
-\* Humidity exhibits a moderate positive relationship with yield.
-
-\* Yield tends to increase slightly as humidity increases, although the relationship is weaker than temperature.
+Strongest Negative Correlation
 
 
 
-\### Strongest Negative Correlation
+\* Temperature and humidity exhibit a strong negative correlation.
+
+\* As temperature increases, humidity generally decreases, which is consistent with expected greenhouse and polyhouse conditions.
 
 
 
-\* CO₂ concentration shows the strongest negative correlation with yield.
-
-\* However, the magnitude of this negative relationship appears relatively weak and should be interpreted cautiously.
+Yield Relationships
 
 
 
-\## Scatter Plot Findings
+\* Yield shows a weak positive correlation with temperature.
+
+\* Yield also shows a weak positive correlation with CO₂ concentration.
+
+\* Humidity displays a weak negative correlation with yield.
+
+\* Overall, no single environmental variable appears to strongly determine yield on its own.
 
 
 
-\### Temperature vs Yield
+Scatter Plot Findings
 
 
 
-\* The clearest trend among all scatter plots.
-
-\* Data points form an upward pattern, indicating that yield generally increases as temperature rises.
-
-\* The relationship appears approximately linear within the observed temperature range (18–26°C).
-
-\* Temperature is likely to be an important predictive feature for modeling.
+Temperature vs Yield
 
 
 
-\### Humidity vs Yield
+\* A slight upward trend is visible.
+
+\* Higher temperatures are associated with marginally higher yields.
+
+\* The relationship is relatively weak, suggesting other factors also influence production.
 
 
 
-\* A mild positive trend is visible.
-
-\* Higher humidity levels are associated with slightly higher yields.
-
-\* The scatter remains broad, suggesting humidity alone does not fully explain yield variation.
+Humidity vs Yield
 
 
 
-\### CO₂ vs Yield
-
-
+\* The scatter plot shows substantial overlap across humidity levels.
 
 \* No strong visual trend is apparent.
 
-\* Data points form a relatively dispersed cloud around the average yield.
-
-\* While the heatmap suggests a weak negative correlation, the scatter plot indicates that CO₂ alone is not a strong predictor of yield in this dataset.
+\* Humidity alone does not appear to be a strong predictor of yield in this dataset.
 
 
 
-\## Data Quality Observations
+CO₂ vs Yield
 
 
 
-\* No significant outlier clusters are visible after cleaning.
+\* A mild positive relationship can be observed.
 
-\* Environmental variables remain within realistic polyhouse operating ranges.
-
-\* Yield values are concentrated between approximately 16 kg and 18.5 kg, indicating stable production conditions.
+\* Higher CO₂ concentrations are sometimes associated with higher yields, although the effect appears limited.
 
 
 
-\## Modeling Implications
+Data Quality Observations
 
 
 
-\* Temperature should be prioritized as a candidate feature due to its strongest observed relationship with yield.
+\* No major outlier clusters are visible after cleaning.
 
-\* Humidity should also be retained because it shows a moderate positive association with production.
+\* Environmental measurements remain within realistic polyhouse operating ranges.
 
-\* CO₂ may contribute useful information when combined with other variables, even though its standalone relationship appears weak.
+\* Yield values are relatively consistent throughout the observation period.
 
-\* The relationships appear largely linear, making linear regression a reasonable baseline model.
-
-\* More complex models can later be evaluated if nonlinear effects emerge.
+\* The dataset contains stable environmental conditions with moderate seasonal variation.
 
 
 
-\## Caveats
+Modeling Implications
+
+
+
+\* Temperature should be retained as an important predictor due to its positive relationship with yield.
+
+\* CO₂ should also be included because it demonstrates a modest positive association with production.
+
+\* Humidity may provide additional context even though its individual relationship with yield appears weak.
+
+\* Since correlations with yield are relatively small, combining multiple features will likely be more effective than relying on any single variable.
+
+\* Linear regression can serve as a useful baseline model before testing more advanced approaches.
+
+
+
+Caveats
 
 
 
 \* Correlation does not imply causation.
 
-\* Environmental variables may interact with each other, and observed relationships may be influenced by overall polyhouse management practices.
+\* Environmental variables influence one another and may be affected by polyhouse management practices.
 
-\* This is a synthetic dataset with relatively stable operating conditions, so real-world farms may exhibit stronger variability and more complex patterns.
+\* This is a synthetic dataset and may not fully capture the biological complexity of commercial mushroom cultivation.
 
 
 

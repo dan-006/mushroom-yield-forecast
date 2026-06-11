@@ -29,8 +29,8 @@ feature_cols = [
 
 split_idx = int(len(df) * 0.8)
 
-train = df.iloc[:split_idx]
-test = df.iloc[split_idx:]
+train = df.iloc[:split_idx].reset_index(drop=True)
+test = df.iloc[split_idx:].reset_index(drop=True)
 
 print("\nTrain period:")
 print(train["timestamp"].min(), "->",
