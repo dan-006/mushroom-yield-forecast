@@ -1,48 +1,48 @@
-Linear Regression Diagnostics
+\# Linear Regression Diagnostics
 
 
 
-Residuals vs Predicted Yield
+\## Residuals vs Predicted Yield
 
 
 
-Residuals are generally centered around zero and appear randomly distributed across predicted yield values. No strong systematic bias is visible, indicating that the model does not consistently overpredict or underpredict mushroom yield.
+The residuals are generally centered around zero and appear randomly distributed across the range of predicted yield values. No strong systematic pattern is visible, indicating that the model does not consistently overpredict or underpredict mushroom yield.
 
 
 
-A small number of large negative residuals are present, suggesting occasional observations where yield is substantially overestimated by the model. Mild heteroscedasticity is visible at higher predicted yield values, although the effect is not severe.
+Most residuals fall within approximately ±1 kg, although a small number of larger positive and negative residuals are present. The spread of residuals appears relatively consistent across predicted values, with only slight variation at higher yield levels. Overall, there is no strong evidence of severe heteroscedasticity.
 
 
 
-Residuals vs Humidity
+\## Residuals vs Humidity
 
 
 
-Residuals remain centered around zero across the full humidity range. No clear curvature or U-shaped pattern is observed, suggesting that the current model captures the humidity-related signal reasonably well.
+Residuals remain centered around zero across the full humidity range. No clear trend, curvature, or funnel-shaped pattern is observed, suggesting that the model captures the humidity-related relationship reasonably well.
 
 
 
-Several outlier observations remain, but most residuals fall within approximately ±1 kg of zero.
+Most residuals are concentrated within approximately ±1 kg of zero, although a few outlier observations remain. The random distribution of residuals indicates that substantial humidity-related information is not being systematically missed by the model.
 
 
 
-Diagnostic Findings
+\## Diagnostic Findings
 
 
 
 1\. Residuals are generally centered around zero, indicating low overall prediction bias.
 
-2\. No strong nonlinear pattern is visible in the humidity residual plot.
+2\. No strong systematic pattern is visible in the residuals versus predicted yield plot.
 
-3\. A small number of large negative residuals indicate occasional prediction errors that are not explained by the current feature set.
+3\. No clear nonlinear relationship is evident in the residuals versus humidity plot.
 
-4\. Mild heteroscedasticity is present at higher predicted yield levels.
+4\. A small number of outliers remain, indicating occasional prediction errors that are not fully explained by the current feature set.
 
-5\. Train and test residual magnitudes are similar, suggesting the model generalizes reasonably well and does not show clear signs of overfitting.
+5\. Residual variance appears reasonably consistent across the prediction range, suggesting that the assumptions of linear regression are largely satisfied.
 
 
 
-Modeling Recommendation
+\## Modeling Recommendation
 
 
 
@@ -50,7 +50,11 @@ The Linear Regression model provides an interpretable baseline with acceptable p
 
 
 
-Residual analysis suggests that the model captures a meaningful portion of the relationship between environmental variables and mushroom yield, but unexplained variation remains. Because some residual structure and outliers persist, evaluating a nonlinear model such as Random Forest Regression is recommended to determine whether predictive performance can be improved.
+Residual analysis indicates that the model captures a meaningful portion of the relationship between environmental variables and mushroom yield. However, unexplained variation remains, as evidenced by the presence of residual outliers and moderate predictive accuracy. These findings suggest that some relationships between environmental conditions and yield may be nonlinear or involve more complex interactions.
+
+
+
+To investigate whether predictive performance can be improved, a nonlinear model such as Random Forest Regression should be evaluated and compared against the linear baseline.
 
 
 

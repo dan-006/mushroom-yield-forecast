@@ -1,130 +1,128 @@
-EDA Notes
+\# EDA Notes
 
 
 
-Overview
+\## Overview
 
 
 
-Exploratory Data Analysis (EDA) was performed on 994 cleaned polyhouse observations collected between January 2023 and September 2025. Correlation analysis and scatter plots were used to examine relationships between environmental variables and mushroom yield.
+Exploratory Data Analysis (EDA) was performed on 980 cleaned polyhouse observations collected between January 2023 and September 2025. Correlation analysis and scatter plots were used to examine relationships between environmental variables and mushroom yield and to identify potential predictors for machine learning models.
 
 
 
-Correlation Analysis
+\## Correlation Analysis
 
 
 
-Strongest Positive Correlation
+\### Yield Correlations
 
 
 
-\* Temperature and CO₂ concentration show the strongest positive correlation among the environmental variables.
+\* Temperature exhibits the strongest positive correlation with mushroom yield.
 
-\* This suggests periods of higher temperature are often associated with higher CO₂ levels within the polyhouse environment.
+\* Humidity shows a weak positive correlation with yield.
 
+\* CO₂ concentration shows a weak negative correlation with yield.
 
+\* None of the environmental variables individually demonstrate an extremely strong correlation with yield, indicating that multiple factors likely contribute to production outcomes.
 
-Strongest Negative Correlation
 
 
+\### Relationships Among Environmental Variables
 
-\* Temperature and humidity exhibit a strong negative correlation.
 
-\* As temperature increases, humidity generally decreases, which is consistent with expected greenhouse and polyhouse conditions.
 
+\* Temperature and humidity display only a weak relationship.
 
+\* Temperature and CO₂ concentration also appear to have little correlation.
 
-Yield Relationships
+\* Humidity and CO₂ show minimal association.
 
+\* Overall, the environmental variables are not strongly correlated with one another, reducing concerns about severe multicollinearity.
 
 
-\* Yield shows a weak positive correlation with temperature.
 
-\* Yield also shows a weak positive correlation with CO₂ concentration.
+\## Scatter Plot Findings
 
-\* Humidity displays a weak negative correlation with yield.
 
-\* Overall, no single environmental variable appears to strongly determine yield on its own.
 
+\### Temperature vs Yield
 
 
-Scatter Plot Findings
 
+\* A clear positive trend is visible.
 
+\* Higher temperatures are generally associated with higher mushroom yield.
 
-Temperature vs Yield
+\* The relationship appears approximately linear and is the strongest pattern observed among the predictor variables.
 
 
 
-\* A slight upward trend is visible.
+\### Humidity vs Yield
 
-\* Higher temperatures are associated with marginally higher yields.
 
-\* The relationship is relatively weak, suggesting other factors also influence production.
 
+\* A weak positive relationship is present.
 
+\* Yield tends to increase slightly as humidity increases.
 
-Humidity vs Yield
+\* Considerable variation remains at all humidity levels, suggesting that humidity alone is not a strong predictor of yield.
 
 
 
-\* The scatter plot shows substantial overlap across humidity levels.
+\### CO₂ vs Yield
 
-\* No strong visual trend is apparent.
 
-\* Humidity alone does not appear to be a strong predictor of yield in this dataset.
 
+\* A weak negative relationship is observed.
 
+\* Yield decreases slightly as CO₂ concentration increases.
 
-CO₂ vs Yield
+\* The scatter plot shows substantial dispersion, indicating that CO₂ alone explains little of the variation in yield.
 
 
 
-\* A mild positive relationship can be observed.
+\## Data Quality Observations
 
-\* Higher CO₂ concentrations are sometimes associated with higher yields, although the effect appears limited.
 
 
+\* No major outlier clusters are visible after data cleaning.
 
-Data Quality Observations
+\* Environmental measurements fall within realistic operating ranges.
 
+\* Scatter plots show continuous distributions without obvious data-entry errors.
 
+\* The dataset appears suitable for predictive modeling and feature engineering.
 
-\* No major outlier clusters are visible after cleaning.
 
-\* Environmental measurements remain within realistic polyhouse operating ranges.
 
-\* Yield values are relatively consistent throughout the observation period.
+\## Modeling Implications
 
-\* The dataset contains stable environmental conditions with moderate seasonal variation.
 
 
+\* Temperature should be retained as a primary predictor because it demonstrates the strongest relationship with yield.
 
-Modeling Implications
+\* Humidity should remain in the feature set because it contributes additional information despite its weaker correlation.
 
+\* CO₂ should also be retained because weak individual correlations do not necessarily imply low predictive value when combined with other variables.
 
+\* The relatively low correlations among predictor variables suggest that linear regression coefficients should remain reasonably stable and interpretable.
 
-\* Temperature should be retained as an important predictor due to its positive relationship with yield.
+\* Linear Regression is an appropriate baseline model due to the approximately linear relationship between temperature and yield.
 
-\* CO₂ should also be included because it demonstrates a modest positive association with production.
 
-\* Humidity may provide additional context even though its individual relationship with yield appears weak.
 
-\* Since correlations with yield are relatively small, combining multiple features will likely be more effective than relying on any single variable.
-
-\* Linear regression can serve as a useful baseline model before testing more advanced approaches.
-
-
-
-Caveats
+\## Caveats
 
 
 
 \* Correlation does not imply causation.
 
-\* Environmental variables influence one another and may be affected by polyhouse management practices.
+\* Relationships observed in EDA represent statistical associations rather than direct biological effects.
 
-\* This is a synthetic dataset and may not fully capture the biological complexity of commercial mushroom cultivation.
+\* Additional interactions between environmental variables may exist that are not captured by pairwise correlations.
+
+\* This is a synthetic dataset created for educational purposes and does not fully represent commercial mushroom cultivation systems.
 
 
 
