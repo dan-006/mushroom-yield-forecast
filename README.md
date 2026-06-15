@@ -1,4 +1,4 @@
-Dan Intern - Mushroom Yield Forecast Project
+Mushroom Yield Forecast Project
 
 
 
@@ -125,4 +125,102 @@ notebooks     -> Jupyter notebooks
 src           -> Python scripts
 
 models        -> Trained models
+
+
+
+Champion Model
+
+
+
+Linear Regression was selected as the champion model because it achieved the best performance on the held-out test set while remaining simple and highly interpretable.
+
+
+
+Run Inference
+
+
+
+Load the trained model and generate a mushroom yield prediction:
+
+
+
+```bash
+
+python src/predict.py
+
+```
+
+
+
+Example output:
+
+
+
+```text
+
+Predicted yield: 17.24 kg
+
+```
+
+
+
+Example usage inside Python:
+
+
+
+```python
+
+from src.predict import predict\_yield
+
+
+
+prediction = predict\_yield(
+
+&#x20;   temperature\_c=22.0,
+
+&#x20;   humidity\_pct=88.0,
+
+&#x20;   co2\_ppm=920
+
+)
+
+
+
+print(prediction)
+
+```
+
+
+
+The prediction function automatically:
+
+
+
+\* Creates engineered features
+
+\* Applies the saved Min-Max scaler
+
+\* Loads the champion Linear Regression model
+
+\* Returns predicted mushroom yield in kilograms
+
+
+
+Run Streamlit App
+
+
+
+Start the dashboard locally:
+
+
+
+streamlit run app.py
+
+
+
+The application allows users to enter temperature,
+
+humidity, and CO₂ readings and receive a predicted
+
+daily mushroom yield in kilograms.
 
