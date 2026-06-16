@@ -127,3 +127,6 @@ The dashboard allows users to:
 - View a humidity sensitivity chart
 - Review model performance information
 - Receive warnings when values fall outside the training range
+
+Deployment URL:
+https://mushroom-yield-forecast-yuyw8tbwilapps8umkaafac.streamlit.app/
