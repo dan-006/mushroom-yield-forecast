@@ -4,10 +4,17 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Mushroom Yield Forecast",
+    page_icon="🍄",
     layout="centered"
 )
 
-from src.predict import predict_yield
+try:
+    from src.predict import predict_yield
+except FileNotFoundError:
+    st.error(
+        "Model artifacts are missing. Run the training pipeline first."
+    )
+    st.stop()
 @st.cache_resource
 def load_predictor():
     return predict_yield
@@ -19,7 +26,7 @@ st.caption(
     "Estimate daily mushroom yield from temperature, humidity and CO₂ readings."
 )
 st.markdown(
-    "See project methodology in `reports/model_comparison.md` and project documentation."
+    "Use the controls in the sidebar to estimate daily mushroom yield."
 )
 with st.sidebar:
     temp = st.slider(
@@ -53,11 +60,13 @@ if not (655 <= co2 <= 1145):
 
 if st.button("Predict Yield"):
 
-    prediction = predictor(
-     temp,
-     humidity,
-     co2
-    )
+    with st.spinner("Generating forecast..."):
+
+        prediction = predictor(
+            temp,
+            humidity,
+            co2
+        )
 
     col1, col2 = st.columns(2)
 
@@ -68,8 +77,8 @@ if st.button("Predict Yield"):
         )
 
     with col2:
-        st.info(
-            "Prediction based on current environmental conditions."
+        st.success(
+            "Forecast generated successfully."
         )
     
 st.subheader("What-if Analysis: Humidity Impact")
@@ -107,6 +116,8 @@ with st.expander("Model Information"):
 
     **Training Data Range:**
     January 2023 – September 2025
+
+    **Last Training Date:** September 2025
 
     **Features Used:**
     - Temperature (°C)
