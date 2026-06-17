@@ -2,6 +2,7 @@ import json
 import joblib
 import pandas as pd
 from pathlib import Path
+from src.logger import log_prediction
 
 MODEL_DIR = Path("models")
 
@@ -53,9 +54,16 @@ def predict_yield(
     ]
     )
 
-    prediction = model.predict(scaled)
+    prediction = float(model.predict(scaled)[0])
 
-    return float(prediction[0])
+    log_prediction(
+        temperature_c,
+        humidity_pct,
+    	co2_ppm,
+    	prediction
+	)
+
+    return prediction
 
 
 if __name__ == "__main__":
