@@ -1,8 +1,8 @@
-\# Linear Regression Diagnostics
+# Linear Regression Diagnostics
 
 
 
-\## Residuals vs Predicted Yield
+## Residuals vs Predicted Yield
 
 
 
@@ -14,7 +14,7 @@ Most residuals fall within approximately ±1 kg, although a small number of larg
 
 
 
-\## Residuals vs Humidity
+## Residuals vs Humidity
 
 
 
@@ -26,23 +26,23 @@ Most residuals are concentrated within approximately ±1 kg of zero, although a 
 
 
 
-\## Diagnostic Findings
+## Diagnostic Findings
 
 
 
-1\. Residuals are generally centered around zero, indicating low overall prediction bias.
+1. Residuals are generally centered around zero, indicating low overall prediction bias.
 
-2\. No strong systematic pattern is visible in the residuals versus predicted yield plot.
+2. No strong systematic pattern is visible in the residuals versus predicted yield plot.
 
-3\. No clear nonlinear relationship is evident in the residuals versus humidity plot.
+3. No clear nonlinear relationship is evident in the residuals versus humidity plot.
 
-4\. A small number of outliers remain, indicating occasional prediction errors that are not fully explained by the current feature set.
+4. A small number of outliers remain, indicating occasional prediction errors that are not fully explained by the current feature set.
 
-5\. Residual variance appears reasonably consistent across the prediction range, suggesting that the assumptions of linear regression are largely satisfied.
+5. Residual variance appears reasonably consistent across the prediction range, suggesting that the assumptions of linear regression are largely satisfied.
 
 
 
-\## Modeling Recommendation
+## Modeling Recommendation
 
 
 
@@ -55,6 +55,4 @@ Residual analysis indicates that the model captures a meaningful portion of the 
 
 
 To investigate whether predictive performance can be improved, a nonlinear model such as Random Forest Regression should be evaluated and compared against the linear baseline.
-
-
 

@@ -1,32 +1,32 @@
-Monitoring Plan
+# Monitoring Plan
 
 
 
-Prediction Logging
+## Prediction Logging
 
 
 
-All inference requests are logged with:
+All inference requests are logged with the following information:
 
 
 
-\* Timestamp
+- Timestamp
 
-\* Temperature (°C)
+- Temperature (°C)
 
-\* Humidity (%)
+- Humidity (%)
 
-\* CO₂ (ppm)
+- CO₂ (ppm)
 
-\* Predicted Yield (kg)
-
-
-
-No personally identifiable information is stored.
+- Predicted Yield (kg)
 
 
 
-Monitoring Metrics
+No personally identifiable information (PII) is stored.
+
+
+
+## Monitoring Metrics
 
 
 
@@ -34,83 +34,83 @@ The following metrics will be monitored:
 
 
 
-\* Daily prediction volume
+- Daily prediction volume
 
-\* Average predicted yield
+- Average predicted yield
 
-\* Maximum predicted yield
+- Maximum predicted yield
 
-\* Minimum predicted yield
+- Minimum predicted yield
 
-\* Frequency of out-of-range sensor inputs
-
-
-
-Data Drift Risks
+- Frequency of out-of-range sensor inputs
 
 
 
-Potential drift sources include:
+## Data Drift Risks
 
 
 
-1\. Sensor recalibration or replacement
-
-2\. Seasonal environmental changes
-
-3\. New mushroom substrate batches
-
-4\. Polyhouse operational changes
-
-5\. CO₂ control system modifications
+Potential sources of data drift include:
 
 
 
-Retraining Trigger
+1. Sensor recalibration or replacement
+
+2. Seasonal environmental changes
+
+3. New mushroom substrate batches
+
+4. Polyhouse operational changes
+
+5. CO₂ control system modifications
 
 
 
-Retraining should be considered when:
+## Retraining Trigger
 
 
 
-\* Test MAE increases by more than 20%
-
-\* Input distributions shift significantly
-
-\* New season data becomes available
-
-\* At least six months of new production data are collected
+Model retraining should be considered when:
 
 
 
-Business Impact Monitoring
+- Test MAE increases by more than 20%
+
+- Input feature distributions shift significantly
+
+- New seasonal data becomes available
+
+- At least six months of new production data have been collected
 
 
 
-Monitor:
+## Business Impact Monitoring
 
 
 
-\* Yield overestimation causing buyer shortfalls
-
-\* Yield underestimation causing inefficient harvest planning
-
-\* Prediction failures or missing forecasts
+The following business impacts should be monitored:
 
 
 
-Iteration Roadmap
+- Yield overestimation causing buyer shortfalls
+
+- Yield underestimation causing inefficient harvest planning
+
+- Prediction failures or missing forecasts
 
 
 
-Improvements
+## Iteration Roadmap
 
 
 
-1\. Add additional environmental features such as light intensity and substrate moisture.
+### Planned Improvements
 
-2\. Create automated retraining pipeline using fresh harvest logs.
 
-3\. Implement automated drift detection alerts.
+
+1. Add additional environmental features such as light intensity and substrate moisture.
+
+2. Create an automated retraining pipeline using fresh harvest logs.
+
+3. Implement automated drift detection and alerting mechanisms.
 

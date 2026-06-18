@@ -1,4 +1,4 @@
-Linear Regression Coefficient Interpretation
+# Linear Regression Coefficient Interpretation
 
 
 
@@ -18,7 +18,23 @@ The overall model achieved a test MAE of approximately 0.41 kg and a test R² of
 
 
 
+## Key Findings
+
+
+
+- The temperature-humidity interaction feature has the strongest positive influence on predicted yield.
+
+- CO₂ concentration contributes relatively little compared with the interaction feature.
+
+- Individual temperature and humidity coefficients should be interpreted cautiously due to multicollinearity.
+
+- Model performance metrics provide a more reliable assessment of predictive value than individual coefficient signs.
+
+
+
+## Agritech Interpretation
+
+
+
 From an agritech perspective, the results suggest that environmental conditions act together rather than independently. Maintaining an appropriate balance between temperature and humidity may be more important for yield optimization than adjusting any single environmental factor in isolation.
-
-
 

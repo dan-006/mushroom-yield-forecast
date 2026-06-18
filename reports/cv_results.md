@@ -1,12 +1,12 @@
-Time Series Cross-Validation Results
+# Time Series Cross-Validation Results
 
 
 
-Methodology
+## Methodology
 
 
 
-TimeSeriesSplit with 5 folds was applied to the training dataset. This approach preserves chronological order by ensuring that earlier observations are always used to predict later observations.
+`TimeSeriesSplit` with 5 folds was applied to the training dataset. This approach preserves chronological order by ensuring that earlier observations are always used to predict later observations.
 
 
 
@@ -18,25 +18,21 @@ Mean Absolute Error (MAE) was selected as the evaluation metric because it provi
 
 
 
-Cross-Validation Results
+## Cross-Validation Results
 
 
 
-| Model             | Mean CV MAE (kg) | Std Dev (kg) |
-
-| ----------------- | ---------------- | ------------ |
-
-| Linear Regression | 0.410            | 0.024        |
-
-| Random Forest     | 0.447            | 0.025        |
+| Model | Mean CV MAE (kg) | Std Dev (kg) |
+|-------|------------------|--------------|
+| Linear Regression | 0.410 | 0.024 |
+| Random Forest | 0.447 | 0.025 |
 
 
-
-Fold-Level Results
+## Fold-Level Results
 
 
 
-Linear Regression
+### Linear Regression
 
 
 
@@ -44,19 +40,19 @@ MAE values across folds:
 
 
 
-\* 0.432
+- 0.432
 
-\* 0.368
+- 0.368
 
-\* 0.430
+- 0.430
 
-\* 0.419
+- 0.419
 
-\* 0.402
+- 0.402
 
 
 
-Random Forest
+### Random Forest
 
 
 
@@ -64,29 +60,26 @@ MAE values across folds:
 
 
 
-\* 0.482
+- 0.482
 
-\* 0.415
+- 0.415
 
-\* 0.458
+- 0.458
 
-\* 0.455
+- 0.455
 
-\* 0.423
-
-
-
-Comparison with Final Test Results
+- 0.423
 
 
 
-| Model             | CV MAE (kg) | Test MAE (kg) |
+## Comparison with Final Test Results
 
-| ----------------- | ----------- | ------------- |
 
-| Linear Regression | 0.410       | 0.412         |
 
-| Random Forest     | 0.447       | 0.447         |
+| Model | CV MAE (kg) | Test MAE (kg) |
+|-------|-------------|---------------|
+| Linear Regression | 0.410 | 0.412 |
+| Random Forest | 0.447 | 0.447 |
 
 
 
@@ -94,7 +87,7 @@ The close agreement between cross-validation and test results indicates that bot
 
 
 
-Interpretation
+## Interpretation
 
 
 
@@ -110,17 +103,17 @@ The similarity between cross-validation and final test results suggests that nei
 
 
 
-Overfitting Analysis
+## Overfitting Analysis
 
 
 
-For the Linear Regression model:
+### Linear Regression
 
 
 
-\* Mean Absolute Train Residual = 0.400 kg
+- Mean Absolute Train Residual: 0.400 kg
 
-\* Mean Absolute Test Residual = 0.412 kg
+- Mean Absolute Test Residual: 0.412 kg
 
 
 
@@ -128,11 +121,15 @@ The small difference between training and testing errors indicates strong genera
 
 
 
+### Random Forest
+
+
+
 Random Forest also demonstrated similar cross-validation and test performance, suggesting stable predictive behavior across different time periods.
 
 
 
-Recommendation
+## Recommendation
 
 
 
@@ -144,11 +141,13 @@ Given its superior performance, lower complexity, and greater interpretability, 
 
 
 
-Conclusion
+## Conclusion
 
 
 
-Linear Regression achieved the strongest overall performance with a Mean CV MAE of 0.410 kg and a Test MAE of 0.412 kg. Random Forest did not provide a meaningful improvement despite its additional complexity. Therefore, Linear Regression was selected as the final model for deployment and future analysis.
+Linear Regression achieved the strongest overall performance with a Mean CV MAE of 0.410 kg and a Test MAE of 0.412 kg.
 
 
+
+Random Forest did not provide a meaningful improvement despite its additional complexity. Therefore, Linear Regression was selected as the final model for deployment and future analysis.
 

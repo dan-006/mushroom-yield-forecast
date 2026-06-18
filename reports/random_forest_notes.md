@@ -1,8 +1,8 @@
-Random Forest Results
+# Random Forest Results
 
 
 
-Model Performance
+## Model Performance
 
 
 
@@ -10,19 +10,15 @@ Random Forest Regressor was trained using the same chronological train/test spli
 
 
 
-Test Metrics
+## Test Metrics
 
 
 
 | Metric | Linear Regression | Random Forest |
-
-| ------ | ----------------- | ------------- |
-
-| MAE    | 0.412 kg          | 0.447 kg      |
-
-| RMSE   | 0.508 kg          | 0.544 kg      |
-
-| R²     | 0.525             | 0.453         |
+|----------|------------------:|--------------:|
+| MAE | 0.412 kg | 0.447 kg |
+| RMSE | 0.508 kg | 0.544 kg |
+| R² | 0.525 | 0.453 |
 
 
 
@@ -30,21 +26,21 @@ The Random Forest model produced slightly worse results than the Linear Regressi
 
 
 
-Feature Importance
+## Feature Importance
 
 
 
-Feature importance ranking:
+### Feature Importance Ranking
 
 
 
-1\. Temperature
+1. Temperature
 
-2\. Humidity
+2. Humidity
 
-3\. CO₂
+3. CO₂
 
-4\. Temperature-Humidity Interaction
+4. Temperature-Humidity Interaction
 
 
 
@@ -52,7 +48,7 @@ Temperature was identified as the most influential predictor of mushroom yield, 
 
 
 
-Interpretation
+## Interpretation
 
 
 
@@ -64,7 +60,7 @@ This suggests that the relationship between environmental conditions and mushroo
 
 
 
-Recommendation
+## Recommendation
 
 
 
@@ -72,15 +68,15 @@ For the current dataset, Linear Regression remains the preferred model because:
 
 
 
-\* It achieved better test performance.
+- It achieved better test performance.
 
-\* It achieved a higher R² score.
+- It achieved a higher R² score.
 
-\* It is easier to interpret.
+- It is easier to interpret.
 
-\* It requires fewer computational resources.
+- It requires fewer computational resources.
 
-\* Environmental effects can be communicated more clearly to stakeholders.
+- Environmental effects can be communicated more clearly to stakeholders.
 
 
 
@@ -88,11 +84,9 @@ Future improvements should focus on collecting additional predictive features, s
 
 
 
-Conclusion
+## Conclusion
 
 
 
 Although Random Forest produced reasonable predictions, it did not improve upon the Linear Regression baseline. Therefore, Linear Regression was selected as the final model for mushroom yield prediction in this project.
-
-
 
